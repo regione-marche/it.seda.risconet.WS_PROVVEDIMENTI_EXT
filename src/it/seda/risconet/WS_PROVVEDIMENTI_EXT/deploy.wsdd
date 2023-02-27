@@ -1,0 +1,222 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WS_Provvedimenti_EXT WSDL service -->
+
+  <service name="WS_Provvedimenti_EXTSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      <parameter name="wsdlServiceElement" value="WS_Provvedimenti_EXT"/>
+      <parameter name="schemaQualified" value="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      <parameter name="wsdlServicePort" value="WS_Provvedimenti_EXTSoap"/>
+      <parameter name="className" value="it.seda.risconet.WS_PROVVEDIMENTI_EXT.WS_Provvedimenti_EXTSoapImpl"/>
+      <parameter name="wsdlPortType" value="WS_Provvedimenti_EXTSoap"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="executeRequest_NEW" qname="operNS:ExecuteRequest_NEW" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:ExecuteRequest_NEWResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:>>ExecuteRequest_NEWResponse>ExecuteRequest_NEWResult" xmlns:rtns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/ExecuteRequest_NEW" >
+        <parameter qname="pns:xml" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:>>ExecuteRequest_NEW>xml" xmlns:tns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      </operation>
+      <operation name="executeOperation" qname="operNS:ExecuteOperation" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:ExecuteOperationResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:>>ExecuteOperationResponse>ExecuteOperationResult" xmlns:rtns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/ExecuteOperation" >
+        <parameter qname="pns:xml" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:>>ExecuteOperation>xml" xmlns:tns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      </operation>
+      <operation name="executeRequest" qname="operNS:ExecuteRequest" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:ExecuteRequestResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:>>ExecuteRequestResponse>ExecuteRequestResult" xmlns:rtns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/ExecuteRequest" >
+        <parameter qname="pns:xml" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:>>ExecuteRequest>xml" xmlns:tns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      </operation>
+      <operation name="test" qname="operNS:test" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/test" >
+      </operation>
+      <operation name="test_EP_NuovoProvvedimento_Discarico_Ext" qname="operNS:Test_EP_NuovoProvvedimento_Discarico_Ext" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:Test_EP_NuovoProvvedimento_Discarico_ExtResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/Test_EP_NuovoProvvedimento_Discarico_Ext" >
+        <parameter qname="pns:XML" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="EP_NuovoProvvedimento_Discarico_Ext" qname="operNS:EP_NuovoProvvedimento_Discarico_Ext" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:EP_NuovoProvvedimento_Discarico_ExtResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:>>EP_NuovoProvvedimento_Discarico_ExtResponse>EP_NuovoProvvedimento_Discarico_ExtResult" xmlns:rtns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/EP_NuovoProvvedimento_Discarico_Ext" >
+        <parameter qname="pns:xml" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:>>EP_NuovoProvvedimento_Discarico_Ext>xml" xmlns:tns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"/>
+      </operation>
+      <operation name="test_ExecuteOperation" qname="operNS:Test_ExecuteOperation" xmlns:operNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnQName="retNS:Test_ExecuteOperationResult" xmlns:retNS="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" returnType="rtns:>>Test_ExecuteOperationResponse>Test_ExecuteOperationResult" xmlns:rtns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" soapAction="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/Test_ExecuteOperation" >
+        <parameter qname="pns:XML" xmlns:pns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="test executeOperation EP_NuovoProvvedimento_Discarico_Ext executeRequest executeRequest_NEW test_EP_NuovoProvvedimento_Discarico_Ext test_ExecuteOperation"/>
+
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteRequest_NEW>xml"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequest_NEWXml"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>EP_NuovoProvvedimento_Discarico_Ext>xml"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.EP_NuovoProvvedimento_Discarico_ExtXml"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>EP_NuovoProvvedimento_Discarico_ExtResponse>EP_NuovoProvvedimento_Discarico_ExtResult"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.EP_NuovoProvvedimento_Discarico_ExtResponseEP_NuovoProvvedimento_Discarico_ExtResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteRequest>xml"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequestXml"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>ExecuteOperation"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteOperation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>test"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>Test_ExecuteOperationResponse>Test_ExecuteOperationResult"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test_ExecuteOperationResponseTest_ExecuteOperationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>EP_NuovoProvvedimento_Discarico_ExtResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.EP_NuovoProvvedimento_Discarico_ExtResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteRequest_NEWResponse>ExecuteRequest_NEWResult"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequest_NEWResponseExecuteRequest_NEWResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>ExecuteRequest_NEWResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequest_NEWResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>ExecuteRequestResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequestResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>Test_ExecuteOperation"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test_ExecuteOperation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>Test_EP_NuovoProvvedimento_Discarico_ExtResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test_EP_NuovoProvvedimento_Discarico_ExtResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>ExecuteOperationResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteOperationResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>testResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.TestResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteRequestResponse>ExecuteRequestResult"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequestResponseExecuteRequestResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteOperationResponse>ExecuteOperationResult"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteOperationResponseExecuteOperationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>EP_NuovoProvvedimento_Discarico_Ext"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.EP_NuovoProvvedimento_Discarico_Ext"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>ExecuteRequest"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>Test_ExecuteOperationResponse"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test_ExecuteOperationResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>Test_EP_NuovoProvvedimento_Discarico_Ext"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.Test_EP_NuovoProvvedimento_Discarico_Ext"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://risconet.seda.it/WS_PROVVEDIMENTI_EXT/"
+        qname="ns:>>ExecuteOperation>xml"
+        type="java:it.seda.risconet.WS_PROVVEDIMENTI_EXT.ExecuteOperationXml"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
